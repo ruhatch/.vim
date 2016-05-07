@@ -128,4 +128,3 @@ let g:airline#extensions#tabline#enabled = 1
 filetype plugin indent on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
-let g:Tex_CompileRule_pdf = "pdflatex -shell-escape -interaction=nonstopmode -file-line-error-style $*"

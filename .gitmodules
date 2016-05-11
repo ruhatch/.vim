@@ -19,3 +19,6 @@
 [submodule "bundle/vim-terminal-colors"]
 	path = bundle/vim-terminal-colors
 	url = git://github.com/hickop/vim-terminal-colors.git
+[submodule "bundle/vim-colorschemes"]
+	path = bundle/vim-colorschemes
+	url = https://github.com/flazz/vim-colorschemes

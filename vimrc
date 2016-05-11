@@ -103,6 +103,8 @@ if has('langmap') && exists('+langnoremap')
   set langnoremap
 endif
 
+colorscheme termscheme
+
 set tabstop=4 shiftwidth=4 expandtab
 set number
 set backupdir=~/.vim/backup//

@@ -104,6 +104,7 @@ if has('langmap') && exists('+langnoremap')
 endif
 
 colorscheme wargrey
+let g:airline_theme='wombat'
 
 set tabstop=4 shiftwidth=4 expandtab
 set number
@@ -130,3 +131,7 @@ let g:airline#extensions#tabline#enabled = 1
 filetype plugin indent on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
+let g:Tex_CompileRule_pdf = 'pdflatex -shell-escape -interaction=nonstopmode -file-line-error-style $*'
+let g:Tex_MultipleCompileFormats = 'dvi,pdf'
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_ViewRule_pdf = 'zathura'

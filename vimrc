@@ -16,10 +16,6 @@ if v:progname =~? "evim"
   finish
 endif
 
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
-
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -29,10 +25,8 @@ else
   set backup		" keep a backup file (restore to previous version)
   set undofile		" keep an undo file (undo changes after closing)
 endif
-set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -43,18 +37,6 @@ map Q gq
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
-
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -106,8 +88,38 @@ endif
 colorscheme wargrey
 let g:airline_theme='wombat'
 
-set tabstop=4 shiftwidth=4 expandtab
+syntax on
+filetype plugin indent on
+
+"set tabstop=4 shiftwidth=4 expandtab
+set nocompatible
 set number
+set nowrap
+set showmode
+set tw=80
+set smartcase
+set smarttab
+set smartindent
+set autoindent
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set incsearch
+set mouse=a
+set history=1000
+set clipboard=unnamedplus,autoselect
+
+set completeopt=menuone,menu,longest
+
+set wildignore+=*\\tmp\\*,*.swp,*.swo,*.zip,.git,.cabal-sandbox
+set wildmode=longest,list,full
+set wildmenu
+set completeopt+=longest
+
+set t_Co=256
+
+set cmdheight=1
+
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
@@ -128,7 +140,6 @@ let g:airline#extensions#tabline#enabled = 1
 
 " Latex related commands
 
-filetype plugin indent on
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 let g:Tex_CompileRule_pdf = 'pdflatex -shell-escape -interaction=nonstopmode -file-line-error-style $*'

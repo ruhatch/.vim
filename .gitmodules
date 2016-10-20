@@ -61,3 +61,6 @@
 [submodule "bundle/coquille"]
 	path = bundle/coquille
 	url = git@github.com:the-lambda-church/coquille.git
+[submodule "bundle/vimbufsync"]
+	path = bundle/vimbufsync
+	url = git@github.com:let-def/vimbufsync.git

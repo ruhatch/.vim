@@ -58,3 +58,6 @@
 [submodule "bundle/vimproc.vim"]
 	path = bundle/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "bundle/coquille"]
+	path = bundle/coquille
+	url = git@github.com:the-lambda-church/coquille.git
